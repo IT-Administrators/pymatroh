@@ -20,11 +20,11 @@ def main():
 
     #Catching parameters.
     if args.row and args.column and not args.irange:
-        im = imat.IntMatrix(args.row, args.col)
-        im.create_matrix()
+        im = imat.IntMatrix(args.row, args.column)
+        print(im.create_matrix())
     elif args.row and args.column and args.irange:
-        im = imat.IntMatrix(args.row, args.col, args.irange)
-        im.create_matrix()
+        im = imat.IntMatrix(args.row, args.column, args.irange)
+        print(im.create_matrix())
 
 if __name__ == '__main__':
     main()
