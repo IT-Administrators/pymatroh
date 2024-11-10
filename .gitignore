@@ -4,3 +4,4 @@ dist
 TODO
 CHANGES
 __pycache__
+*.egg*
