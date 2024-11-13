@@ -14,7 +14,7 @@ def main():
     arggroup = parser.add_argument_group(title = "IntMatrix")
     arggroup.add_argument("-row", "--row", type=int, help=("Row count."))
     arggroup.add_argument("-col", "--column", type=int, help=("Column count."))
-    arggroup.add_argument("-irng", "--irange", type=int, help=("Integer range."))
+    arggroup.add_argument("-irng", "--irange", type=int, help=("Integer range. Default = 100."))
 
     args = parser.parse_args()
 
