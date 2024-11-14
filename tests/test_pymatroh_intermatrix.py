@@ -4,8 +4,8 @@ import unittest
 
 from addimportdir import importdir,removedir
 
-# Import IntMatrix class from pymatroh
-from src.pymatroh import intmatrix as imat
+# Import Matrix class from pymatroh
+from pymatroh import matrix as imat
 
 importdir()
 
@@ -28,7 +28,7 @@ class TestPrerequistes(unittest.TestCase):
     def test_non_equal_list_length(self):
         self.assertEqual(len(self.non_quad_mat), len(self.non_quad_mat_len))
 
-class TestPymatrohIntMatrix(unittest.TestCase):
+class TestPymatrohMatrix(unittest.TestCase):
     """Test Monogram class of pyngramroh module."""
 
     def setUp(self):
@@ -39,13 +39,17 @@ class TestPymatrohIntMatrix(unittest.TestCase):
 
     def test_mat_length_quad_mat(self):
         for ltest in range(len(self.quad_mat_len)):
-            im = imat.IntMatrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
-            self.assertEqual(len(im.create_matrix()),self.quad_mat_len[ltest])
+            im = imat.Matrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
+            self.assertEqual(len(im.create_int_matrix()),self.quad_mat_len[ltest])
+            self.assertEqual(len(im.create_float_matrix()),self.quad_mat_len[ltest])
+            self.assertEqual(len(im.create_complex_matrix()),self.quad_mat_len[ltest])
 
     def test_mat_length_non_quad_mat(self):
         for ltest in range(len(self.non_quad_mat_len)):
-            im = imat.IntMatrix(self.non_quad_mat[ltest][0],self.non_quad_mat[ltest][1])
-            self.assertEqual(len(im.create_matrix()),self.non_quad_mat_len[ltest])
+            im = imat.Matrix(self.non_quad_mat[ltest][0],self.non_quad_mat[ltest][1])
+            self.assertEqual(len(im.create_int_matrix()),self.non_quad_mat_len[ltest])
+            self.assertEqual(len(im.create_float_matrix()),self.non_quad_mat_len[ltest])
+            self.assertEqual(len(im.create_complex_matrix()),self.non_quad_mat_len[ltest])
 
 if __name__ == '__main__':
     # Verbose unittests.

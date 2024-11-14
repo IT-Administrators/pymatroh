@@ -3,7 +3,7 @@
 
 # Include necessary modules.
 # User defined modules.
-from pymatroh import intmatrix as imat
+from pymatroh import matrix as rmat
 # Std modules.
 import argparse
 
@@ -11,20 +11,28 @@ def main():
     """Parameter declaration."""
     # Declaring parameters.
     parser = argparse.ArgumentParser()
-    arggroup = parser.add_argument_group(title = "IntMatrix")
+    arggroup = parser.add_argument_group(title = "Matrix")
     arggroup.add_argument("-row", "--row", type=int, help=("Row count."))
     arggroup.add_argument("-col", "--column", type=int, help=("Column count."))
-    arggroup.add_argument("-irng", "--irange", type=int, help=("Integer range. Default = 100."))
+    arggroup.add_argument("-rnge", "--range", type=int, default= 100, help=("Integer range. Default = 100."))
+    arggroup.add_argument("-mtype", "--matrixtype", type=str, default="int", help=("Type of matrix. You can specify int,float or complex."))
 
     args = parser.parse_args()
 
     #Catching parameters.
-    if args.row and args.column and not args.irange:
-        im = imat.IntMatrix(args.row, args.column)
-        print(im.create_matrix())
-    elif args.row and args.column and args.irange:
-        im = imat.IntMatrix(args.row, args.column, args.irange)
-        print(im.create_matrix())
+    if args.row and args.column and not args.matrixtype:
+        im = rmat.Matrix(args.row, args.column, args.range)
+        print(im.create_int_matrix())
+    elif args.row and args.column and args.matrixtype:
+        im = rmat.Matrix(args.row, args.column, args.range)
+        if args.matrixtype == "int":
+            print(im.create_int_matrix())
+        elif args.matrixtype == "float":
+            print(im.create_float_matrix())
+        elif args.matrixtype == "complex":
+            print(im.create_complex_matrix())
+        else: 
+            raise ValueError("Wrong matrixtype on parameter --matrixtype. You can specify int,float or complex.")
 
 if __name__ == '__main__':
     main()
