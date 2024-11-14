@@ -16,6 +16,7 @@ def main():
     arggroup.add_argument("-col", "--column", type=int, help=("Column count."))
     arggroup.add_argument("-rnge", "--range", type=int, default= 100, help=("Integer range. Default = 100."))
     arggroup.add_argument("-mtype", "--matrixtype", type=str, default="int", help=("Type of matrix. You can specify int,float or complex."))
+    arggroup.add_argument("-round", "--round", type=bool, default=False, help=("Rounds the result by 3 digits."))
 
     args = parser.parse_args()
 
@@ -24,7 +25,7 @@ def main():
         im = rmat.Matrix(args.row, args.column, args.range)
         print(im.create_int_matrix())
     elif args.row and args.column and args.matrixtype:
-        im = rmat.Matrix(args.row, args.column, args.range)
+        im = rmat.Matrix(args.row, args.column, args.range, args.round)
         if args.matrixtype == "int":
             print(im.create_int_matrix())
         elif args.matrixtype == "float":

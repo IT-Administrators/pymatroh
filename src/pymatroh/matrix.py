@@ -6,10 +6,11 @@ import random
 class Matrix:
     """Create a matrix containing only integers."""
 
-    def __init__(self, row: int, col: int, irange = 100):
+    def __init__(self, row: int, col: int, irange = 100, applyround = False):
         self.row = row
         self.col = col
         self.irange = irange
+        self.applyround = applyround
 
     def create_int_matrix(self):
         """Create a random integer matrix."""
@@ -18,7 +19,7 @@ class Matrix:
         for i in range(self.row):
             childmatrix = []
             for j in range(self.col):
-                childmatrix.append(random.randint(0,self.irange))
+                childmatrix.append(random.randint(0, self.irange))
             matrix.append(childmatrix)
         return matrix
     
@@ -29,7 +30,10 @@ class Matrix:
         for i in range(self.row):
             childmatrix = []
             for j in range(self.col):
-                childmatrix.append(random.uniform(0.0,self.irange))
+                if self.applyround == False:
+                    childmatrix.append(random.uniform(0.0, self.irange))
+                else:
+                    childmatrix.append(round(random.uniform(0.0, self.irange), 3))
             matrix.append(childmatrix)
         return matrix
     
@@ -40,6 +44,9 @@ class Matrix:
         for i in range(self.row):
             childmatrix = []
             for j in range(self.col):
-                childmatrix.append(complex(random.uniform(0.0,self.irange),random.uniform(0.0,self.irange)))
+                if self.applyround == False:
+                    childmatrix.append(complex(random.uniform(0.0, self.irange), random.uniform(0.0, self.irange)))
+                else:
+                    childmatrix.append(complex(round(random.uniform(0.0, self.irange), 3), round(random.uniform(0.0, self.irange), 3)))
             matrix.append(childmatrix)
         return matrix

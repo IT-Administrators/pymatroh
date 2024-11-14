@@ -21,11 +21,19 @@ Return:
 
 Usage:
     from pymatroh import matrix as cmat
-    im = imat.Matrix(2,1)
+    cm = cmat.Matrix(2,1)
     cm.create_complex_matrix()
 
 Return:
     [[(16.081037664553943+86.97288344375117j)], [(21.18506273716121+92.88016833034504j)]]
+
+Usage:
+    from pymatroh import matrix as cmat
+    cm = cmat.Matrix(2,1,applyround=True)
+    cm.create_complex_matrix()
+
+Return:
+    [[(44+61j)], [(26+64j)]]
 
 Usage:
     import pymatroh
