@@ -36,8 +36,28 @@ There are two ways to install this module depending on the way you work and the 
 pip install pymatroh
 python -m pip install pymatroh
 
+There are two ways to install this module depending on the way you work and the preinstalled modules:
+
+pip install pymatroh
+python -m pip install pymatroh
+
 ## How to use
 
+### How to Import
+
+You can import the module in two ways:
+
+```python
+import pymatroh
+```
+
+- This will import all functions. Even the ones that are not supposed to be used.
+
+```python
+from pymatroh import *
+```
+
+- This will import only the significant functions, meant for using
 ### How to Import
 
 You can import the module in two ways:
@@ -133,8 +153,44 @@ Result:
 ```
 [[69.856], [30.491]]
 ```
+With the cli interface you can create python matrices and use them in scripts or export them to file
+to use it in other projects.
+
+To show the help run the following command:
+
+```python
+python -m pymatroh -h
+```
+Result:
+```
+usage: __main__.py [-h] [-row ROW] [-col COLUMN] [-rnge RANGE] [-mtype MATRIXTYPE] [-round ROUND]
+
+options:
+  -h, --help            show this help message and exit
+
+Matrix:
+  -row ROW, --row ROW   Row count.
+  -col COLUMN, --column COLUMN
+                        Column count.
+  -rnge RANGE, --range RANGE
+                        Integer range. Default = 100.
+  -mtype MATRIXTYPE, --matrixtype MATRIXTYPE
+                        Type of matrix. You can specify int,float or complex.
+  -round ROUND, --round ROUND
+                        Rounds the result by 3 digits.
+```
+Using the module via cli:
+```
+python -m pymatroh --row 2 --col 1 --round True --matrixtype float
+```
+Result:
+```
+[[69.856], [30.491]]
+```
 ## Releasing
 
 ## License
+
+[MIT](./LICENSE)
 
 [MIT](./LICENSE)
