@@ -33,31 +33,12 @@ You can create only integer matrices, float or complex matrices. Mixing these va
 
 There are two ways to install this module depending on the way you work and the preinstalled modules:
 
-pip install pymatroh
-python -m pip install pymatroh
+1. ```pip install pymatroh```
 
-There are two ways to install this module depending on the way you work and the preinstalled modules:
-
-pip install pymatroh
-python -m pip install pymatroh
+2. ```python -m pip install pymatroh```
 
 ## How to use
 
-### How to Import
-
-You can import the module in two ways:
-
-```python
-import pymatroh
-```
-
-- This will import all functions. Even the ones that are not supposed to be used.
-
-```python
-from pymatroh import *
-```
-
-- This will import only the significant functions, meant for using
 ### How to Import
 
 You can import the module in two ways:
