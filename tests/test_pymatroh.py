@@ -5,7 +5,7 @@ import unittest
 from addimportdir import importdir,removedir
 
 # Import Matrix class from pymatroh
-from pymatroh import matrix as rmat
+from pymatroh import Matrix
 
 importdir()
 
@@ -46,7 +46,7 @@ class TestPymatrohMatrix_Length(unittest.TestCase):
     def test_mat_length_quad_mat(self):
         for ltest in range(len(self.quad_mat_len)):
             # Create matrix object.
-            rm = rmat.Matrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
+            rm = Matrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
             # Test if length of quadratic matrix is as long as specified.
             self.assertEqual(len(rm.create_int_matrix()),self.quad_mat_len[ltest])
             self.assertEqual(len(rm.create_float_matrix()),self.quad_mat_len[ltest])
@@ -55,7 +55,7 @@ class TestPymatrohMatrix_Length(unittest.TestCase):
     # Test length of non quadratic matrices.
     def test_mat_length_non_quad_mat(self):
         for ltest in range(len(self.non_quad_mat_len)):
-            rm = rmat.Matrix(self.non_quad_mat[ltest][0],self.non_quad_mat[ltest][1])
+            rm = Matrix(self.non_quad_mat[ltest][0],self.non_quad_mat[ltest][1])
             # Test if length of non quadratic matrix is as long as specified.
             self.assertEqual(len(rm.create_int_matrix()),self.non_quad_mat_len[ltest])
             self.assertEqual(len(rm.create_float_matrix()),self.non_quad_mat_len[ltest])
@@ -76,7 +76,7 @@ class TestPymatrohMatrix_ValueType(unittest.TestCase):
         # Test integer matrix.
         for ltest in range(len(self.quad_mat_len)):
             # Create matrix object.
-            rm = rmat.Matrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
+            rm = Matrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
             # Create integer matrix.
             imat = rm.create_int_matrix()
             # Check if each element of every submatrix is from type int.
@@ -88,7 +88,7 @@ class TestPymatrohMatrix_ValueType(unittest.TestCase):
     # Test if all values of integer matrix are from type integer.
     def test_float_mat_value_type(self):
         for ltest in range(len(self.quad_mat_len)):
-            rm = rmat.Matrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
+            rm = Matrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
             fmat = rm.create_float_matrix()
             # Check if each element of every submatrix is from type float.
             for childmat in fmat:
@@ -99,7 +99,7 @@ class TestPymatrohMatrix_ValueType(unittest.TestCase):
     # Test if all values of integer matrix are from type integer.          
     def test_complex_mat_value_type(self):
         for ltest in range(len(self.quad_mat_len)):
-            rm = rmat.Matrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
+            rm = Matrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
             cmat = rm.create_complex_matrix()
             # Check if each element of every submatrix is from type complex.
             for childmat in cmat:

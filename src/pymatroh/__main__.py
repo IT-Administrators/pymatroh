@@ -3,7 +3,7 @@
 
 # Include necessary modules.
 # User defined modules.
-from pymatroh import matrix as rmat
+from pymatroh import Matrix
 # Std modules.
 import argparse
 
@@ -22,10 +22,10 @@ def main():
 
     #Catching parameters.
     if args.row and args.column and not args.matrixtype:
-        im = rmat.Matrix(args.row, args.column, args.range)
+        im = Matrix(args.row, args.column, args.range)
         print(im.create_int_matrix())
     elif args.row and args.column and args.matrixtype:
-        im = rmat.Matrix(args.row, args.column, args.range, args.round)
+        im = Matrix(args.row, args.column, args.range, args.round)
         if args.matrixtype == "int":
             print(im.create_int_matrix())
         elif args.matrixtype == "float":

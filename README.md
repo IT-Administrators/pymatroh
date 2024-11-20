@@ -53,7 +53,7 @@ import pymatroh
 from pymatroh import *
 ```
 
-- This will import only the significant functions, meant for using
+- This will import only the significant functions, meant for using.
 
 ### Using the module
 
@@ -64,7 +64,7 @@ Example 1: Using ```import <modulename>```
 # Import module.
 import pymatroh
 # Create integer matrix with just one value.
-im = pymatroh.matrix.Matrix(1,1)
+im = pymatroh.Matrix(1,1)
 print(im.create_int_matrix())  
 ```
 Result:
@@ -75,9 +75,9 @@ Result:
 Example 2: Using ```from <modulename> import <submodule/class>```
 ```python
 # Import class matrix from pymatroh package.
-from pymatroh import matrix as fmat
+from pymatroh import Matrix
 # Create float matrix.
-fm = fmat.Matrix(2,2)
+fm = Matrix(2,2)
 print(fm.create_float_matrix())
 ```
 Result:
@@ -87,9 +87,9 @@ Result:
 Example 3: Using parameter applyround.
 ```python
 # Import class matrix from pymatroh package.
-from pymatroh import matrix as fmat
+from pymatroh import Matrix
 # Create float matrix.
-fm = fmat.Matrix(2,2,applyround=True)
+fm = Matrix(2,2,applyround=True)
 print(fm.create_float_matrix())
 ```
 Result:
