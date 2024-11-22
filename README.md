@@ -1,3 +1,9 @@
+![PyPI - Version](https://img.shields.io/pypi/v/pymatroh)
+![PyPI - License](https://img.shields.io/pypi/l/pymatroh)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/pymatroh)
+[![Publish PyPi](https://github.com/IT-Administrators/pymatroh/actions/workflows/release.yaml/badge.svg?branch=main)](https://github.com/IT-Administrators/pymatroh/actions/workflows/release.yaml)
+[![CI](https://github.com/IT-Administrators/pymatroh/actions/workflows/ci.yaml/badge.svg)](https://github.com/IT-Administrators/pymatroh/actions/workflows/ci.yaml)
+
 # pymatroh
 
 _With the pymatroh module you can create different kind of matrices for testing purposes._
