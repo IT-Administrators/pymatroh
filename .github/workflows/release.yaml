@@ -7,11 +7,11 @@ on:
     types: [completed]
 #Jobs to run in this workflow.
 jobs:
-  if: ${{ github.event.workflow_run.conclusion == 'success' }}
   # Job build.
   build:
     name: Build distribution
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     # Only run job if tests were successfull. 
     # Steps to run in this job.
     steps:
