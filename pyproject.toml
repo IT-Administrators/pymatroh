@@ -15,7 +15,7 @@ authors = [
 maintainers = [
   {name = "IT-Administrators"}
 ]
-keywords = ["matrix", "random", "int", "integer"]
+keywords = ["matrix", "random", "int", "integer", "float", "complex"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
