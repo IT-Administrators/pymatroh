@@ -85,7 +85,7 @@ class TestPymatrohMatrix_ValueType(unittest.TestCase):
                     if type(element) != int:
                         raise TypeError("Non integer Type in integer matrix.")
     
-    # Test if all values of integer matrix are from type integer.
+    # Test if all values of float matrix are from type integer.
     def test_float_mat_value_type(self):
         for ltest in range(len(self.quad_mat_len)):
             rm = Matrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
@@ -96,7 +96,7 @@ class TestPymatrohMatrix_ValueType(unittest.TestCase):
                     if type(element) != float:
                         raise TypeError("Non float Type in float matrix.")
     
-    # Test if all values of integer matrix are from type integer.          
+    # Test if all values of complex matrix are from type integer.          
     def test_complex_mat_value_type(self):
         for ltest in range(len(self.quad_mat_len)):
             rm = Matrix(self.quad_mat[ltest][0],self.quad_mat[ltest][1])
