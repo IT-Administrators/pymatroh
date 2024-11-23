@@ -143,6 +143,21 @@ Result:
 
 ## Releasing
 
+Releases are published automatically when a tag is pushed to GitHub.
+
+```Powershell
+# Create release variable.
+$Release = "x.x.x"
+# Create commit.
+git commit --allow-empty -m "Release $Release"
+# Create tag.
+git tag -a $Release -m "Version $Release"
+# Push from original.
+git push origin --tags
+# Push from fork.
+git push upstream --tags
+```
+
 ## License
 
 [MIT](./LICENSE)
