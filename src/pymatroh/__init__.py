@@ -98,5 +98,17 @@ class Matrix:
                     childmatrix.append(complex(round(random.uniform(0.0, self.irange), 3), round(random.uniform(0.0, self.irange), 3)))
             matrix.append(childmatrix)
         return matrix
+    
+    def create_binary_matrix(self):
+        """Create a random binary matrix."""
+        
+        self.irange = 1
+        matrix = []
+        for i in range(self.row):
+            childmatrix = []
+            for j in range(self.col):
+                childmatrix.append(random.randint(0, self.irange))
+            matrix.append(childmatrix)
+        return matrix
 
 __all__ = ["Matrix"]
