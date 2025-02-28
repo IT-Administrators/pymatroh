@@ -3,5 +3,5 @@ dist
 .vscode*
 TODO
 CHANGES
-__pycache__
+*__pycache__
 *.egg*
