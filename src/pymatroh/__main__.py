@@ -15,7 +15,7 @@ def main():
     arggroup.add_argument("-row", "--row", type=int, help=("Row count."))
     arggroup.add_argument("-col", "--column", type=int, help=("Column count."))
     arggroup.add_argument("-rnge", "--range", type=int, default= 100, help=("Integer range. Default = 100."))
-    arggroup.add_argument("-mtype", "--matrixtype", type=str, default="int", help=("Type of matrix. You can specify int,float or complex."))
+    arggroup.add_argument("-mtype", "--matrixtype", type=str, default="int", help=("Type of matrix. You can specify int,float,complex or binary."))
     arggroup.add_argument("-round", "--round", type=bool, default=False, help=("Rounds the result by 3 digits."))
 
     args = parser.parse_args()
@@ -32,8 +32,10 @@ def main():
             print(im.create_float_matrix())
         elif args.matrixtype == "complex":
             print(im.create_complex_matrix())
+        elif args.matrixtype == "binary":
+            print(im.create_binary_matrix())
         else: 
-            raise ValueError("Wrong matrixtype on parameter --matrixtype. You can specify int,float or complex.")
+            raise ValueError("Wrong matrixtype on parameter --matrixtype. You can specify int,float,complex or binary.")
 
 if __name__ == '__main__':
     main()
