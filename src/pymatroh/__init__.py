@@ -44,15 +44,15 @@ Return:
     [[53]]    
 
 Author: IT-Administrators
-License: MIT
 
+License: MIT
 """
 
 # Include necessary modules.
 import random
 
 class Matrix:
-    """Create a matrix containing only integers."""
+    """Create different types of matrices."""
 
     def __init__(self, row: int, col: int, irange = 100, applyround = False):
         self.row = row
